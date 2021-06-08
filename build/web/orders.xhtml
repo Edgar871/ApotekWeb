@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Orders | Akz Pharmacy</title>
+        <ui:include src="views/layouts/head.xhtml"/>
+    </h:head>
+    <h:body>
+        <div class='container pt-4'>
+            <ui:include src="views/layouts/navadmin.xhtml"/>
+            
+            <div class="bg-light py-3">
+             <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mb-0"><a href="faces/admin.xhtml">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Orders</strong></div>
+                    </div>
+                </div>
+            </div>
+            <br></br>
+            
+            <div class="row">
+                <div class="col-12">
+                    <h:form>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Name</td>
+                                <td>Product Name</td>
+                                <td>Address</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ui:repeat value="#{ordersController.getOrders()}" var="orders">
+                                <tr>
+                                    <td><p>#{orders.id}</p></td>
+                                    <td><p>#{orders.name}</p></td>
+                                    <td><p>#{orders.productName}</p></td>
+                                    <td><p>#{orders.address}</p></td>
+                                </tr>
+                            </ui:repeat>
+                        </tbody>
+                    </table>
+                    </h:form>
+                </div>
+            </div>
+            <ui:include src="views/layouts/footer.xhtml"/>
+        </div>
+        <ui:include src="views/layouts/scripts.xhtml"/>
+    </h:body>
+</html>

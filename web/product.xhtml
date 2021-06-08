@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Repository | Akz Pharmacy</title>
+        <ui:include src="views/layouts/head.xhtml"/>
+    </h:head>
+    <h:body>
+        <div class='container pt-4'>
+            <ui:include src="views/layouts/navadmin.xhtml"/>
+            <div class="bg-light py-3">
+             <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mb-0"><a href="faces/admin.xhtml">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Repository</strong></div>
+                    </div>
+                </div>
+            </div>
+            <br/><br/>
+            
+            <div class="row">
+                <div class="col-4 pb-4">
+                    <a href="faces/create.xhtml" class="btn btn-sm btn-primary">Add New Product</a>
+                </div>
+                <div class="col-12">
+                    <h:form>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Product Name</td>
+                                <td>Product Type</td>
+                                <td>Stock</td>
+                                <td>Price</td>
+                                <td>Expired Date</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ui:repeat value="#{productBean.getProducts()}" var="product">
+                                <tr>
+                                    <td><p>#{product.idObat}</p></td>
+                                    <td><p>#{product.productName}</p></td>
+                                    <td><p>#{product.type}</p></td>
+                                    <td><p>#{product.stock}</p></td>
+                                    <td><p>#{product.price}</p></td>
+                                    <td><p>#{product.expired}</p></td>
+                                    <td>
+                                        <b:commandButton class="btn btn-sm btn-primary" value="Edit"
+                                                         action="edit.xhtml"><f:actionListener binding="#{productBean.updateProducts()}"/>
+                                        </b:commandButton>
+                                        <b:commandButton class="btn btn-sm btn-danger"  value="Delete"
+                                                         action="#{productBean.deleteProducts(product.idObat)}"/>
+                                    </td>
+                                </tr>
+                            </ui:repeat>
+                        </tbody>
+                    </table>
+                    </h:form>
+                </div>
+            </div>
+            <ui:include src="views/layouts/footer.xhtml"/>
+        </div>
+        <ui:include src="views/layouts/scripts.xhtml"/>
+    </h:body>
+</html>
+

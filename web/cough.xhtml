@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Cough and Flu</title>
+        <ui:include src="views/layouts/head.xhtml"/>
+    </h:head>
+    <h:body>
+        <div class="site-wrap">
+    <ui:include src="views/layouts/navbar.xhtml"/>
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="faces/homepage.xhtml">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cough and Flu</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+    
+        <div class="row">
+          <div class="col-sm-6 col-lg-4 text-center item mb-4">
+              <a href="#"> <img src="https://d2qjkwm11akmwu.cloudfront.net/products/329457_16-6-2020_10-7-14.jpeg" width="100%" alt="Image"></img></a>
+            <h3 class="text-dark"><a href="faces/coughdetails.xhtml">Bisolvon Extra Syrup</a></h3>
+            <p class="price">IDR 10.000</p>
+          </div>
+          <div class="col-sm-6 col-lg-4 text-center item mb-4">
+            <a href="#"> <img src="https://www.farmaku.com/uploads/product/Apotek_Online_Farmaku.com_Rhinos_SR_Kapsul.jpg" width="100%" alt="Image"></img></a>
+            <h3 class="text-dark"><a href="faces/coughdetails.xhtml">Rhinos SR 10 Capsule</a></h3>
+            <p class="price">IDR 5.000</p>
+          </div>
+          <div class="col-sm-6 col-lg-4 text-center item mb-4">
+            <a href="#"> <img src="https://d2qjkwm11akmwu.cloudfront.net/products/images/2190.jpg" width="100%" alt="Image"></img></a>
+            <h3 class="text-dark"><a href="faces/coughdetails.xhtml">Paratusin</a></h3>
+            <p class="price">IDR 28.000</p>
+          </div>
+        </div>
+      </div>
+      <div align="center">
+        <a href="faces/buy.xhtml">
+        <button class="btn btn-md height-auto px-4 py-3 btn-primary">Make An Order</button></a>
+      </div>
+    </div>
+
+    <ui:include src="views/layouts/footer.xhtml"/>
+  </div>
+
+  <ui:include src="views/layouts/scripts.xhtml"/>
+    </h:body>
+</html>

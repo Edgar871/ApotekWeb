@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div class="site-wrap">
+            <div class="site-navbar py-2">
+              <div class="search-wrap">
+                <div class="container">
+                  <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+                  <form action="#" method="post">
+                    <input type="text" class="form-control" placeholder="Search keyword and hit enter..."/>
+                  </form>
+                </div>
+              </div>
+
+              <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="logo">
+                    <div class="site-logo">
+                      <a href="faces/homepage.xhtml" class="js-logo-clone">AKZ Pharmacy</a>
+                    </div>
+                  </div>
+                  <div class="main-nav d-none d-lg-block">
+                    <nav class="site-navigation text-right text-md-center" role="navigation">
+                      <ul class="site-menu js-clone-nav d-none d-lg-block">
+                        <li><a href="faces/homepage.xhtml">Home</a></li>
+                        <li class="active"><a href="faces/buy.xhtml">Store</a></li>
+                            <li class="has-children">
+                                <a href="#">Category</a>
+                                <ul class="dropdown">
+                                    <li><a href="faces/cough.xhtml">Cough and Flu</a></li>
+                                    <li><a href="faces/firstkit.xhtml">First Aid Kit</a></li>
+                                    <li><a href="faces/vitamin.xhtml">Vitamin and Supplements</a></li> 
+                                </ul>
+                            </li>
+                            <li><a href="faces/login.xhtml">Login</a></li>
+                          </ul>
+                    </nav>
+                  </div>
+                  <div class="icons">
+                    <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+                    <a href="#" class="icons-btn d-inline-block bag">
+                      <span class="icon-shopping-bag"></span>
+                    </a>
+                    <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
+                        class="icon-menu"></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

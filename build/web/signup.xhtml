@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Sign Up | Akz Pharmacy</title>
+        <ui:include src="views/layouts//head.xhtml"/>
+        <ui:include src="views/layouts/loginhead.xhtml"/>
+    </h:head>
+    <h:body>
+        <div class="kotak">
+        <p id="welcome_akz">Welcome To AKZ Pharmacy!
+            <hr width="35%" align="center"/>
+        </p>
+        <div id="command_akz">
+            <p>Please enter your information and proceed to the next<br/>
+                step so we can build your account</p>
+        </div>
+        <!-- FORM -->
+        <h:form>
+            <p data-validate="Valid email is required: ex@abc.xyz">
+                <b:inputText style="position: relative; left: 50px; height: 30px; width: 285px" value="#{users.username}"
+                             type="text" name="username" class="email_akz" placeholder="Username"/>
+            </p>
+            <p data-validate="Password is required">
+                <b:inputText style="position: relative; left: 70px; height: 30px; margin-top: 10px; width: 285px" value="#{users.password}"
+                       type="password" name="pass" class="password_akz" placeholder="Password"/>
+            </p>
+            <p>
+                <label style="position: relative; left: 70px" class="remember_akz">
+                    <input type="checkbox" checked="checked" name="remember" class="remember"/> Remember me
+                </label>
+            </p>
+            <p>
+                <b:commandButton class="btn btn-sm btn-primary" action="login.xhtml" value="Submit">
+                    <f:actionListener binding="#{users.signup()}"/>
+                </b:commandButton>
+            </p>
+            <div class="text-center p-t-45 p-b-4">
+                <span class="txt1 wrong" id="wrongSpan">
+                </span>
+            </div>
+            <p>
+                <label style="position: relative; left: 40px" class="log_in_akz">Already have an account?
+                    <a href="faces/login.xhtml">Log In</a>
+                </label>
+            </p>                            
+        </h:form>
+        </div>
+    </h:body>
+</html>
+

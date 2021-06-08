@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Store</title>
+        <ui:include src="views/layouts/head.xhtml"/>
+    </h:head>
+    <h:body>
+        <div class='container pt-4'>
+            <ui:include src="views/layouts/navbar.xhtml"/>
+            
+        <div class="bg-light py-3">
+             <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mb-0"><a href="faces/homepage.xhtml">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+                    </div>
+                </div>
+        </div>
+            <br></br>
+            <div class="row">
+                <div class="col-12">
+                    <h:form>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td class="product-thumbnail">ID</td>
+                                <td class="product-name">Product Name</td>
+                                <td class="product-price">Product Type</td>
+                                <td class="product-quantity">Stock</td>
+                                <td class="product-quantity">Price</td>
+                                <td class="product-total">Expired Date</td>
+                                <td class="product-remove">Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ui:repeat value="#{productBean.getProducts()}" var="product">
+                                <tr>
+                                    <td><p>#{product.idObat}</p></td>
+                                    <td><p>#{product.productName}</p></td>
+                                    <td><p>#{product.type}</p></td>
+                                    <td><p>#{product.stock}</p></td>
+                                    <td><p>#{product.price}</p></td>
+                                    <td><p>#{product.expired}</p></td>
+                                    <td>
+                                        <b:commandButton class="btn btn-sm btn-primary" action="faces/createOrders.xhtml" value="Buy This Product">
+                                            <f:actionListener binding="#{productBean.updateProducts()}"></f:actionListener>
+                                        </b:commandButton>
+                                    </td>
+                                </tr>
+                            </ui:repeat>
+                        </tbody>
+                    </table>
+                    </h:form>
+                </div>
+            </div>
+            <ui:include src="views/layouts/footer.xhtml"/>
+        </div>
+        <ui:include src="views/layouts/scripts.xhtml"/>
+    </h:body>
+</html>
+
